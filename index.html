@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUENTIN JUBAULT</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay" onclick="closeMenuMobile()"></div>
+    <header>
+        <p>QUENTIN JUBAULT</p>
+        <nav>
+            <div class="burger-close" onclick="closeMenuMobile()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+            </div>
+            <ul onclick="closeMenuMobile()">
+                <li><a href="#apropos">A propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger" onclick="openMenuMobile()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          </div>
+    </header>
+    <main>
+            <h1>Bienvenue sur mon portfolio</h1>
+            
+            <section class="presentation">
+                <h2 id="apropos">A propos</h2>
+                    <div class="apropos">
+                        <img src="img/photodemoi.png" alt="photo de moi">
+                        <p>Je suis <b>Quentin</b>, développeur junior. J'ai 28 ans et je suis actuellement en recherche d'une entreprise pour une <b>alternance</b>
+                             dans le cadre du Titre de <b>Concepteur Développeur d'Application (BAC+3)</b>, suite à l'obtention de mon diplôme de Développeur
+                              (BAC+2) en reconversion à l'ENI.</p>
+                    </div>
+                    <h3>Mon parcour</h3>
+                        <p class="parcour">Après presque 10 ans en restauration rapide, j'ai envie de changer de voie professionnelle.
+                            Mon oncle, un développeur sénior ma transmit sa passion pour le développement.
+                            Moi qui adore la logique et les écrans je décide donc me lancer dans une reconversion de développeur.
+                        </p>
+                    <h3>Formations</h3>
+                        <p class="formations">J'ai suivi une formation intensive de 8 mois conprennant 2 mois de stage dans une entreprise.
+                            Cette formation était orienter sur le back-end ou j'ai pu apprendre la POO, le SQL et différent language backend comme JAVA et PHP
+                            ainsi que leur framword Springboot et Symfony.
+                        </p>
+                    <div class="cvs">
+                        <a href="docs/QuentinJubaultCVAlternance.pdf" target="_blank">Voir mon CV</a>
+                        <a href="docs/QuentinJubaultCVAlternance.pdf" download>Télécharger mon CV</a>
+                    </div>
+            
+        </section>
+
+        <section class="projets">
+            <h2 id="projets">Projets</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <h4>Jeu du mémory</h4>
+                    <img src="img/memory.png" alt="Projet mémory">
+                    </div>
+                  <div class="swiper-slide">
+                    <h4>Site d'enchères (Java / Springboot)</h4>
+                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <h4>Site d'organisation de sorties (PHP / Symfony)</h4>
+                    <img src="img/sortirdwwm.jpg" />
+                  </div>
+
+                </div>
+
+                <div class="swiper-pagination-projets"></div>
+              </div>
+
+        </section>
+        <section class="contact">
+            <h2 id="contact">Contact</h2>
+            <p>Mail : quentin.jubault2024@campus-eni.fr</p>
+            <p>Linkedin :  <a href="https://www.linkedin.com/in/quentin-jubault-2601a2317">in/quentin-jubault</a></p>
+            <p>Mon gitub : </p>
+
+        </section>
+        
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+</html>
