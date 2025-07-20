@@ -4,6 +4,7 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     speed: 1000,
     slidePerVuew: 1,
+    spaceBetween:300,
   
     // If we need pagination
     pagination: {
