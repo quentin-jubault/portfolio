@@ -13,7 +13,11 @@
 <body>
     <div class="overlay" onclick="closeMenuMobile()"></div>
     <header>
-        <p>QUENTIN JUBAULT</p>
+        <div class="nom">
+            <a href="/"><p>QUENTIN JUBAULT</p></a>
+            <img id="ampoule" onclick="darkmode()" src="img/ampouleBlack.png" alt="logo ampoule">
+            <img id="ampouleBlack" class="hidden" onclick="lightmode()" src="img/ampoule.png" alt="logo ampoule">
+        </div>
         <nav>
             <div class="burger-close" onclick="closeMenuMobile()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -33,13 +37,13 @@
           </div>
     </header>
     <main>
-            <h1>Bienvenue sur mon portfolio</h1>
+            <h1 id="firsttitle" class="fade-up">Bienvenue sur mon portfolio</h1>
             
             <section class="presentation">
-                <h2 id="apropos">A propos</h2>
+                <h2 id="apropos" class="fade-up">A propos</h2>
                     <div class="apropos">
-                        <img src="img/photodemoi.png" alt="photo de moi">
-                        <p>Je suis <b>Quentin</b>, développeur junior. J'ai 28 ans et je suis actuellement en recherche d'une entreprise pour une <b>alternance</b>
+                        <img id="photoDeProfil" class="reveal-image" src="img/photodemoi.png" alt="photo de moi">
+                        <p id="introduction" class="fade-up">Je suis <b>Quentin</b>, développeur junior. J'ai 28 ans et je suis actuellement en recherche d'une entreprise pour une <b>alternance</b>
                              dans le cadre du Titre de <b>Concepteur Développeur d'Application (BAC+3)</b>, suite à l'obtention de mon diplôme de Développeur
                               (BAC+2) en reconversion à l'ENI.</p>
                     </div>
@@ -59,32 +63,79 @@
                         </p>
                     <div class="cvs">
                         <a href="docs/QuentinJubaultCVAlternance.pdf" target="_blank" rel="noopener noreferrer">Voir mon CV</a>
-                        <a href="docs/QuentinJubaultCVAlternance.pdf" download>Télécharger mon CV</a>
                     </div>
             
         </section>
 
-        <section class="projets">
-            <h2 id="projets">Projets</h2>
+        <span id="projets"></span>
+
+        <h2 id="projetsDesktop" class="fade-up">Projets</h2>
+
+        <section class="projetsDesktop">
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h4>Jeu Snake</h4>
+                    <a href="https://quentin-jubault.github.io/snakeGame/" target="_blank" rel="noopener noreferrer"></a>
+                    <img src="img/snake.jpg" alt="projet jeu Snake">
+                </div>  
+
+                 <div class="project-card">
+                    <h4>Jeu du mémory</h4>
+                    <a href="https://quentin-jubault.github.io/memoryGame/" target="_blank" rel="noopener noreferrer"></a>
+                    <img src="img/memory.png" alt="projet mémory">
+                </div>
+
+                 <div class="project-card">
+                    <h4>Site d'enchères (Java / Springboot)</h4>
+                    <img src="img/encheres.png" alt="logo projet enchères" />
+                </div>
+
+                <div class="project-card">
+                    <h4>Site d'organisation de sorties (PHP / Symfony)</h4>
+                    <a href="sortir.html"></a>
+                    <img src="img/sortirdwwm.jpg" alt="projet sortir" />
+                </div>
+
+                <div class="project-card">
+                    <h4>Oléo100 Projet de Stage (Wordpress)</h4>
+                    <a href="https://www.oleo100.com/?utm_source=google&utm_medium=cpc&utm_campaign=SEARCH-Google-Navigationnelle&utm_content=Oleo100_-_Exact_match&utm_term=oleo100&gad_source=1&gad_campaignid=11250776550&gbraid=0AAAAACRCU_19x-T6VmTHu_Bxk3gRDmrNF&gclid=CjwKCAiAtq_NBhA_EiwA78nNWDNElcHU2JSZZxjsM5QdJSzfukNMT3PIVHKrBXAbuYJOG1c5eyR6RhoCPKQQAvD_BwE" target="_blank" rel="noopener noreferrer"></a>
+                    <img src="img/OLEO100_LOGOTYPE_RVB-474x474.webp" />
+                </div>
+
+            </div>
+        </section>
+
+
+        <h2 id="projetsMobile" class="fade-up">Projets</h2>
+
+        <section class="projetsMobile">
             <div class="swiper">
                 <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <h4>Jeu Snake</h4>
                     <img src="img/snake.jpg" alt="Projet jeu Snake">
+                    <a href="https://quentin-jubault.github.io/snakeGame/" target="_blank" rel="noopener noreferrer"></a>
                     </div>
                   <div class="swiper-slide">
                     <h4>Jeu du mémory</h4>
+                    <a href="https://quentin-jubault.github.io/memoryGame/" target="_blank" rel="noopener noreferrer"></a>
                     <img src="img/memory.png" alt="Projet mémory">
                     </div>
                   <div class="swiper-slide">
                     <h4>Site d'enchères (Java / Springboot)</h4>
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                    <img src="img/encheres.png" />
                   </div>
                   <div class="swiper-slide">
                     <h4>Site d'organisation de sorties (PHP / Symfony)</h4>
+                    <a href="sortir.html"></a>
                     <img src="img/sortirdwwm.jpg" />
                   </div>
-
+                  <div class="swiper-slide">
+                    <h4>Oléo100 Projet de Stage (Wordpress)</h4>
+                    <a href="https://www.oleo100.com/?utm_source=google&utm_medium=cpc&utm_campaign=SEARCH-Google-Navigationnelle&utm_content=Oleo100_-_Exact_match&utm_term=oleo100&gad_source=1&gad_campaignid=11250776550&gbraid=0AAAAACRCU_19x-T6VmTHu_Bxk3gRDmrNF&gclid=CjwKCAiAtq_NBhA_EiwA78nNWDNElcHU2JSZZxjsM5QdJSzfukNMT3PIVHKrBXAbuYJOG1c5eyR6RhoCPKQQAvD_BwE" target="_blank" rel="noopener noreferrer"></a>
+                  <img src="img/OLEO100_LOGOTYPE_RVB-474x474.webp" />
+                    </div>
                 </div>
 
                 <div class="swiper-pagination-projets"></div>
@@ -96,7 +147,7 @@
         <h2 id="contact">Contact</h2>
         <section class="contact">
             <p>Mail : quentin.jubault2024@campus-eni.fr</p>
-            <p>Linkedin :  <a href="https://www.linkedin.com/in/quentin-jubault-2601a2317" target="_blank" rel="noopener noreferrer">in/quentin-jubault</a></p>
+            <p>Linkedin :  <a href="https://www.linkedin.com/in/quentin-jubault-2601a2317" target="_blank" rel="noopener noreferrer">quentin-jubault</a></p>
             <p>Mon Github : <a href="https://github.com/quentin-jubault" target="_blank" rel="noopener noreferrer">Quentin Jubault</a></p>
         </section>
     </footer>

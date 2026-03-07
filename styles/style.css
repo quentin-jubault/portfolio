@@ -3,7 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 html {
@@ -40,28 +43,13 @@ h4 {
   margin-bottom: 1.25rem;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(0, 0, 0);
-  opacity: 0.6;
-  z-index: 9;
-  display: none;
-}
-
-.overlay.open {
-  display: block;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   background-color: #2e4053;
   align-items: center;
   position: sticky;
+  top: 0;
   z-index: 1000;
   box-shadow: 0 0 15px black;
 }
@@ -69,7 +57,21 @@ header {
   header {
     position: fixed;
     width: 100%;
+    top: 0;
   }
+}
+header .nom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+header .nom img {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.3125rem;
 }
 header p {
   background-color: #2e4053;
@@ -179,9 +181,14 @@ header nav ul li a:hover:after {
 }
 
 main {
-  background: linear-gradient(to bottom right, #85c1e9, white);
-  color: black;
+  background: #0f172a;
+  color: #e2e8f0;
   font-family: Arial;
+}
+@media all and (max-width: 768px) {
+  main {
+    padding-top: 4.375rem;
+  }
 }
 @media all and (min-width: 768px) {
   main {
@@ -210,7 +217,6 @@ main .presentation .apropos {
   main .presentation .apropos {
     flex-direction: row;
     gap: 6.25rem;
-    padding: 0 12.5rem;
   }
 }
 main .presentation .apropos img {
@@ -218,18 +224,7 @@ main .presentation .apropos img {
   width: 18.75rem;
   height: 18.75rem;
   border-radius: 100%;
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  will-change: transform, opacity;
 }
 main .presentation .parcour, main .presentation .formations {
   margin-left: 1.875rem;
@@ -260,16 +255,75 @@ main .cvs a {
     padding: 1.25rem;
   }
 }
-main .swiper {
+main .projetsDesktop {
   padding-bottom: 1.875rem;
+}
+@media all and (max-width: 768px) {
+  main .projetsDesktop {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  main #projetsDesktop {
+    display: none;
+  }
+}
+main .projetsMobile {
+  padding-bottom: 1.875rem;
+}
+@media all and (min-width: 768px) {
+  main .projetsMobile {
+    display: none;
+  }
+}
+@media all and (min-width: 768px) {
+  main #projetsMobile {
+    display: none;
+  }
+}
+main .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+main .project-card {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(245, 242, 242, 0.588);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+main .project-card h4 {
+  text-align: center;
+  padding-top: 0.625rem;
+}
+main .project-card img {
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+main .project-card a {
+  position: absolute;
+  inset: 0;
+}
+main .project-card:hover {
+  transform: translateY(-8px);
+}
+main span#projets {
+  display: block;
+  height: 0;
+  visibility: hidden;
 }
 main .swiper .swiper-slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 31.25rem;
-  height: 31.25rem;
+  width: 100%;
+  max-width: 25rem;
+  max-height: 25rem;
 }
 @media all and (max-width: 768px) {
   main .swiper .swiper-slide {
@@ -282,9 +336,13 @@ main .swiper .swiper-slide img {
   width: 100%;
   height: 100%;
   max-height: 25rem;
-  max-width: 31.25rem;
+  max-width: 25rem;
   object-fit: cover;
   box-shadow: 0 0 10px black;
+}
+main .swiper .swiper-slide a {
+  position: absolute;
+  inset: 0;
 }
 @media all and (max-width: 768px) {
   main .swiper .swiper-button-next, main .swiper .swiper-button-prev {
@@ -339,6 +397,73 @@ footer .contact p {
 }
 footer .contact a {
   color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  z-index: 9;
+  display: none;
+}
+
+.overlay.open {
+  display: block;
+}
+
+.darkmode {
+  background: linear-gradient(to bottom right, #85c1e9, white);
+  color: black;
+  font-family: Arial;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.fade-up.visible {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.reveal-image {
+  opacity: 0;
+}
+
+.reveal-image.visible {
+  animation: revealImage 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes revealImage {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUENTIN JUBAULT</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay" onclick="closeMenuMobile()"></div>
+    <header>
+        <div class="nom">
+            <a href="/"><p>QUENTIN JUBAULT</p></a>
+            <img id="ampoule" onclick="darkmode()" src="img/ampouleBlack.png" alt="logo ampoule">
+            <img id="ampouleBlack" class="hidden" onclick="lightmode()" src="img/ampoule.png" alt="logo ampoule">
+        </div>
+        <nav>
+            <div class="burger-close" onclick="closeMenuMobile()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+            </div>
+            <ul onclick="closeMenuMobile()">
+                <li><a href="/#apropos">A propos</a></li>
+                <li><a href="/#projets">Projets</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="burger" onclick="openMenuMobile()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          </div>
+    </header>
+    <main>
+
+    </main>
+        <footer>
+        <h2 id="contact">Contact</h2>
+        <section class="contact">
+            <p>Mail : quentin.jubault2024@campus-eni.fr</p>
+            <p>Linkedin :  <a href="https://www.linkedin.com/in/quentin-jubault-2601a2317" target="_blank" rel="noopener noreferrer">quentin-jubault</a></p>
+            <p>Mon Github : <a href="https://github.com/quentin-jubault" target="_blank" rel="noopener noreferrer">Quentin Jubault</a></p>
+        </section>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+</html>
