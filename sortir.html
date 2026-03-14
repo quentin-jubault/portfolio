@@ -37,32 +37,130 @@
           </div>
     </header>
     <main class="mainsortir">
-        <h1>Projet Sortir</h1>
-        <div>
-            <img src="img/logo-sortir.png" alt="Logo Sorprojet sortir">
-            <div class="presentation">
-                <h2>Presentation:</h2>
-                    <p>
-                        Le projet Sortir est un projet réalisé en groupe de 4, sur une durée d'une semaine et demie.
-                        L'objectif était de mettre en relation d'anciens et nouveaux élèves de l'école informatique ENI
-                        afin qu'ils puissent organiser des sorties entre eux.
-                    </p>
-                    <p>
-                        Chaque utilisateur peut créer une sortie avec une date, une durée et un nombre de places limité.
-                        Les autres utilisateurs peuvent s'y inscrire ou se désister, tant que la sortie n'a pas commencé.
-                    </p>
+
+    <h1>Projet Sortir</h1>
+
+    <!-- Intro : logo + présentation générale -->
+    <section class="sortir-intro">
+        <img src="img/logo-sortir.png" alt="Logo Sortir">
+        <div class="sortir-intro__text">
+            <p>
+                Le projet Sortir est un projet réalisé en groupe de 4, sur une durée d'une semaine et demi.
+                L'objectif était de mettre en relation d'anciens et nouveaux élèves de l'école informatique ENI
+                afin qu'ils puissent organiser des sorties entre eux.
+            </p>
+            <p>
+                Chaque utilisateur peut créer une sortie avec une date, une durée et un nombre de places limité.
+                Les autres utilisateurs peuvent s'y inscrire ou se désister, tant que la sortie n'a pas commencé.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contexte du projet -->
+    <section class="sortir-section">
+        <h2>Contexte</h2>
+            <p>
+                Ce projet était encadré par l'ENI, qui nous a fourni en amont un <strong>diagramme de classes</strong>
+                pour faciliter l'architecture de la base de données, ainsi qu'un <strong>diagramme de cas d'utilisation (Use Case)</strong>
+                qui nous a permis de répartir les tâches par fonctionnalité au sein du groupe.
+            </p>
+    </section>
+
+    <!-- Stack technique -->
+    <section class="sortir-section">
+        <h2>Stack technique</h2>
+        <div class="sortir-stack">
+            <div class="stack-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                <span>PHP</span>
+            </div>
+            <div class="stack-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony">
+                <span>Symfony</span>
+            </div>
+            <div class="stack-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/doctrine/doctrine-original.svg" alt="Doctrine">
+                <span>Doctrine</span>
+            </div>
+            <div class="stack-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                <span>MySQL</span>
+            </div>
+            <div class="stack-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                <span>Bootstrap</span>
             </div>
         </div>
-        
-        <h3>Technologies utilisées</h3>
-        <ul>
-            <li><b>Langages:</b>PHP</li>
-            <li><b>Frameworks / Librairies:</b>Symfony, Bootstrap</li>
-            <li><b>Base de données:</b>MySQL</li>
-            <li><b>Outils:</b>WAMP, Git, Faker </li>
+    </section>
+
+    <!-- Ce que j'ai appris -->
+    <section class="sortir-section">
+        <h2>Apprentissages</h2>
+        <ul class="sortir-list">
+            <li>Création d'entités Symfony et gestion d'une base de données relationnelle</li>
+            <li>Architecture en couches : MVC, Services, Repository</li>
+            <li>Persistance des données avec <strong>Doctrine ORM</strong></li>
+            <li>Génération de fausses données de test avec <strong>Faker</strong></li>
+            <li>Création de profils utilisateurs avec chiffrement des mots de passe</li>
+            <li>Développement en groupe avec répartition par fonctionnalité</li>
         </ul>
-        
-    </main>
+    </section>
+
+    <!-- Fonctionnalités -->
+    <section class="sortir-section">
+        <h2>Fonctionnalités</h2>
+        <ul class="sortir-list">
+            <li>Création et publication d'une sortie (date, durée, nombre de places)</li>
+            <li>Inscription / désistement à une sortie (avant le début)</li>
+            <li>Suppression d'une sortie par son organisateur</li>
+            <li>Création de profils utilisateurs avec mot de passe chiffré</li>
+        </ul>
+
+        <div class="sortir-gallery">
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirSignIn.png', 'Page de connexion')">
+                <img src="img/sortir/sortirSignIn.png" alt="Page de connexion">
+                <span>Connexion</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirCreerSortie.png', 'Créer une sortie')">
+                <img src="img/sortir/sortirCreerSortie.png" alt="Créer une sortie">
+                <span>Créer une sortie</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirsinscrire.png', 'S\'inscrire à une sortie')">
+                <img src="img/sortir/sortirsinscrire.png" alt="S'inscrire">
+                <span>S'inscrire</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirDesister.png', 'Se désister')">
+                <img src="img/sortir/sortirDesister.png" alt="Se désister">
+                <span>Se désister</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirAnnuler.png', 'Annuler une sortie')">
+                <img src="img/sortir/sortirAnnuler.png" alt="Annuler">
+                <span>Annuler</span>
+            </div>
+            <div class="gallery-item" onclick="openLightbox('img/sortir/sortirAnnuler2.png', 'Formulaire d\'annulation')">
+                <img src="img/sortir/sortirAnnuler2.png" alt="Formulaire annulation">
+                <span>Formulaire annulation</span>
+            </div>
+        </div>
+
+        <a href="https://github.com/quentin-jubault/sortirdwwm" target="_blank" rel="noopener noreferrer" class="btn-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            Voir le code sur GitHub
+        </a>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox__content" onclick="event.stopPropagation()">
+            <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+</main>
         <footer>
         <h2 id="contact">Contact</h2>
         <section class="contact">
