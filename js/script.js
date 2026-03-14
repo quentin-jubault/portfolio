@@ -29,19 +29,28 @@ const swiper = new Swiper('.swiper', {
 
   function darkmode() {
     document.querySelector('main').classList.add('darkmode');
+    
+    // Seulement si on est sur la page sortir
+    var mainsortir = document.querySelector('main.mainsortir');
+    if (mainsortir) mainsortir.classList.add('darkmode');
+
     document.getElementById('ampoule').classList.add('hidden');
     document.getElementById('ampouleBlack').classList.remove('hidden');
-    
-  }
+}
 
-  function lightmode() {
+function lightmode() {
     document.querySelector('main').classList.remove('darkmode');
+
+    var mainsortir = document.querySelector('main.mainsortir');
+    if (mainsortir) mainsortir.classList.remove('darkmode');
+
     document.getElementById('ampouleBlack').classList.add('hidden');
     document.getElementById('ampoule').classList.remove('hidden');
-  }
+}
 
 var projetsMobile = document.getElementById("projetsMobile");
 var projetsDesktop = document.getElementById("projetsDesktop");
+var competences = document.getElementById("competences");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -54,6 +63,7 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(projetsMobile);
 observer.observe(projetsDesktop);
+observer.observe(competences);
 
 
 function animateSequence(elements, animationClass) {
@@ -84,21 +94,19 @@ const elements = [
 
 animateSequence(elements, "visible");
 
-console.log(photoDeProfil);
+function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
 
-// var firsttitle = document.getElementById("firsttitle");
-// var apropos = document.getElementById("apropos");
-// var photoDeProfil = document.getElementById("photoDeProfil");
-// var introduction = document.getElementById("introduction");
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
 
-// firsttitle.addEventListener("animationend", listener, false);
-
-// firsttitle.className = "fade-up";
-
-// function listener(event) {
-//   switch (event.type) {
-//     case "animationend":
-//       apropos.classList.add("fade-up");
-//       break;
-//   }
-// }
+// Fermer avec Échap
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
